@@ -1,0 +1,166 @@
+
+.chat-wrapper {
+    position: fixed;
+    z-index: 999; 
+    right: 0;
+    bottom: 0;
+    margin-right: 20px; 
+    margin-bottom: 20px;
+    /* max-width: 400px;
+    min-width: 300px; */
+    height: 450px;
+    width: 350px;
+    background-color: rgba(255, 255, 255, 1);
+    border: black solid 2px;
+    border-radius: 20px;
+    display: none;
+    flex-direction: column;
+
+
+}
+#typing-indicator {
+    display: none;
+    margin-left: -15px; /* Adjust the value as per your preference */
+  }
+
+.chat-username-wrapper {
+    border-bottom: black solid 1.5px;
+    /* background-color: rgba(255, 255, 255, 1); */
+    top: 0;
+    height: 60px;
+    padding: 18px;
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ 
+}
+
+.chat-user {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.chat {
+    flex: 1;
+    overflow-y: auto; /* Change to auto to enable scrolling when the content exceeds the height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.sender-container {
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    justify-content: end;
+ 
+}
+
+.receiver-container {
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    position: relative;
+    display: flex;
+}
+
+
+.sender, .receiver {
+    height: auto; /* Change to auto to adjust the height based on the content */
+    max-width: 70%; /* Adjust the maximum width as per your preference */
+    padding: 10px;
+    border: black solid 1.5px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    word-wrap: break-word; /* Add this property to wrap long words */
+    overflow-wrap: break-word; /* Add this property to wrap long words */
+  }
+
+.sender {
+    border-radius: 10px 10px 0px 10px;
+    background-color: rgba(249, 248, 210, 0.508);
+
+
+}
+
+.receiver {
+    border-radius: 10px 10px 10px 0px;
+    background-color: rgba(61, 214, 10, 0.642);
+
+
+}
+
+
+
+.sender-username {
+    position: absolute;
+    margin-top: -59px;
+    margin-left: -12px;
+    font-size: 0.75rem;
+    color: rgb(47, 46, 46);
+    background-color: rgb(255, 254, 207);
+
+    padding: 8px;
+    border: black solid 2px;
+    border-radius: 20px;
+}
+
+.chat-time {
+    position: absolute;
+    bottom: -5px; /* Adjust the value to move the timestamp down */
+    right: 8px;
+    color: black;
+    font-size: .8em;    
+  }
+  
+
+.chat-date-wrapper {
+    border-bottom: rgb(192, 192, 192) solid 1px;
+    height: fit-content;
+    width: 80%;
+    margin: 20px;
+    color: grey;
+    font-size: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-wrapper {
+    width: 90%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+#chat-input {
+    width: 420px;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    padding-left: 20px;
+    background-color: rgba(255, 255, 255, 1);
+    border: black solid 1.5px;
+
+    margin-left: 20px;
+}
+
+#send-btn {
+    width: 38px;
+    height: 36px;
+    background-color: transparent;
+
+    border-radius: 18px;
+   
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -50px;
+}
