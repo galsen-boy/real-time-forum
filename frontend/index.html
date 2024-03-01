@@ -79,7 +79,7 @@
                         <div class="register-label">
                             <label for="age">Age</label>
                         </div>
-                        <input type="date" id="age" class="register-input" name="age" />
+                        <input type="text" id="age" class="register-input" name="age" />
                         <!-- <input type="date" name="begin" 
                         placeholder="dd-mm-yyyy" value=""
                         min="1997-01-01" max="2030-12-31"> -->
@@ -88,7 +88,11 @@
                         <div class="register-label">
                             <label for="gender">Gender</label>
                         </div>
-                        <input type="text" id="gender" class="register-input" name="gender">
+                        <select class="form-control" id="gender" name="gender" required>
+                            <option value="" selected disabled hidden></option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
                     </div>
                 </div>
                 <div class="register-wrapper">

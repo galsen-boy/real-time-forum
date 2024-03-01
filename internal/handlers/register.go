@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 	"regexp"
+	"strconv"
 
 	"real-time-forum/internal/config"
 	"real-time-forum/internal/database"
@@ -39,6 +40,12 @@ func RegisterHandler(w http.ResponseWriter, r *http.Request) {
 	// Validate the email format
 	if !isValidEmail(newUser.Email) {
 		http.Error(w, "400 bad request: Invalid email address.", http.StatusBadRequest)
+		return
+	}
+	//checks if age is on valid format
+	age, err := strconv.Atoi(newUser.DOB)
+	if err != nil || age < 0 {
+		http.Error(w, "400 bad request: Invalid date of birth.", http.StatusBadRequest)
 		return
 	}
 

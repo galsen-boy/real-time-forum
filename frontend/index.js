@@ -514,7 +514,7 @@ async function signIn() {
     const signinPasswordValue = signinPassword.value.trim();
 
     // Check if any field is empty
-    if (emailUsernameValue === "" || signinPasswordValue === "") {
+    if (emailUsernameValue === "" || signinPasswordValue === "" ) {
         const errorMessageElement = document.querySelector('.error-message');
         errorMessageElement.innerText = "Please fill in all fields.";
         errorMessageElement.classList.add('show'); // Show the error message box
@@ -646,14 +646,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let isValid = true;
 
-        if (fname === "") {
-            errorMessageElement.innerText = "Enter a firstname. ";
+        if (fname === "" || lname.length < 2 || lname.length > 10) {
+            errorMessageElement.innerText = "Enter a firstname. (2-10) characters";
             errorMessageElement.classList.add('show'); // Show the error message box
             isValid = false;
         }
 
-        if (lname === "") {
-            errorMessageElement.innerText += "Enter a surname. ";
+        if (lname === "" || lname.length < 2 || lname.length > 10) {
+            errorMessageElement.innerText += "Enter a surname. (2-10) characters";
             errorMessageElement.classList.add('show'); // Show the error message box
             isValid = false;
         }
@@ -664,7 +664,7 @@ document.addEventListener('DOMContentLoaded', function() {
             isValid = false;
         }
 
-        if (username === "") {
+        if (username === "" ||username.lenght < 2 || username.lenght >10) {
             errorMessageElement.innerText += "Enter a username. ";
             errorMessageElement.classList.add('show'); // Show the error message box
             isValid = false;
@@ -695,13 +695,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Check if password is at least 6 characters long
         if (password.length < 6) {
             errorMessageElement.innerText = "Password should be at least 6 characters long.";
-            errorMessageElement.classList.add('show'); // Show the error message box
-            return;
-        }
-
-        // Check if email is valid using regex
-        if (!isValidEmail(email)) {
-            errorMessageElement.innerText = "Please enter a valid email address.";
             errorMessageElement.classList.add('show'); // Show the error message box
             return;
         }
@@ -749,7 +742,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             // Catch any errors and display the error message
             .catch(error => {
-                errorMessageElement.innerText = "The email or username you entered is already taken.";
+                errorMessageElement.innerText = "The email or username you entered is already taken or invalide age format";
                 errorMessageElement.classList.add('show'); // Show the error message box
             });
     });
