@@ -216,7 +216,7 @@ func ServeWs(hub *Hub, w http.ResponseWriter, r *http.Request) {
 
 	// Start a goroutine to listen for typing events
 	go func() {
-		for {
+		for{
 			select {
 			case <-client.typingLock:
 				if client.typing {

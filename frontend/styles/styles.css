@@ -12,7 +12,8 @@ body {
     font-family: 'Open Sans', sans-serif;
     /* color: lightgrey; */
     height: 100vh;
-   background: none repeat;
+    background-color: blue !important;
+   background: repeat;
 }
 .profile {
     color: #ffffff;
