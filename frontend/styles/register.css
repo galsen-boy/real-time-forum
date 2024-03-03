@@ -27,11 +27,11 @@
     align-items: center;
     background-color: rgb(243, 243, 243);
 }
-select.form-control {
+/* select.form-control {
   -moz-appearance: none;
   -webkit-appearance: none;
   color: #f1f1f1;
-}
+} */
 
 #register-wrapper-gender {
     width: 45%;
