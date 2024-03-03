@@ -12,7 +12,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     /* color: lightgrey; */
     height: 100vh;
-    background-color: blue !important;
+    background-image: url("../assets/pxfuel.jpg") !important;
    background: repeat;
 }
 .profile {

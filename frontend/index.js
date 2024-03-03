@@ -742,6 +742,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             // Catch any errors and display the error message
             .catch(error => {
+            
                 errorMessageElement.innerText = "The email or username you entered is already taken or invalide age format";
                 errorMessageElement.classList.add('show'); // Show the error message box
             });
@@ -785,6 +786,7 @@ document.querySelector(".create-post-btn").addEventListener("click", function() 
     const title = document.querySelector("#create-post-title").value
     const body = document.querySelector("#create-post-body").value
     const category = document.querySelector("#create-post-categories").value
+    
     let data = {
         id: 0,
         user_id: 0,

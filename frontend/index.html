@@ -190,7 +190,288 @@
                 </button>
             </div>
             
+            <!-- post page --><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;700&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./frontend/styles/styles.css" />
+    <link rel="stylesheet" href="./frontend/styles/createpost.css" />
+    <link rel="stylesheet" href="./frontend/styles/signin.css" />
+    <link rel="stylesheet" href="./frontend/styles/register.css" />
+    <link rel="stylesheet" href="./frontend/styles/chat.css" />
+
+    <title>real-time-forum</title>
+    <link type="image/png" sizes="32x32" rel="icon" href="./assets/favicon/favicon.png"/>
+</head>
+
+<body>
+    <body>
+        
+    <div class="logout-nav">
+        <div class="logo">JOTAAY <span>FORUM</span></div>
+        <div class="nav-right">
+            <div class="profile"></div>
+            <button class="logout-btn">
+                <img src="./frontend/assets/signout2.svg" alt="" class="src">
+            </button>
+        </div>
+    </div>
+    <div class="signup-nav">
+        <div class="logo">JOTAAY <span>FORUM</span></div>
+        <div class="nav-right">
+            <button class="signup-btn">
+                SIGN UP
+            </button>
+        </div>
+    </div>
+    <!-- register -->
+    <div class="register-container">
+        <div class="register">
+            <form>
+                <div class="split-input">
+                    <div class="register-wrapper">
+                        <div class="register-label">
+                            <label for="fname">First Name</label>
+                        </div>
+                        <input type="text" id="fname" class="register-input" name="fname" />
+                    </div>
+                    <div class="register-wrapper">
+                        <div class="register-label">
+                            <label for="lname">Last Name</label>
+                        </div>
+                        <input type="text" id="lname" class="register-input" name="lname" />
+                    </div>
+                </div>
+                <div class="register-wrapper">
+                    <div class="register-label">
+                        <label for="email">E-mail</label>
+                    </div>
+
+                    <input type="email" id="email" class="register-input" name="email" />
+                </div>
+                <div class="register-wrapper">
+                    <div class="register-label">
+                        <label for="username">Username</label>
+                    </div>
+
+                    <input type="text" id="register-username" class="register-input" name="username" />
+                </div>
+
+                <div class="split-input">
+                    <div class="register-wrapper" id="register-wrapper-age">
+                        <div class="register-label">
+                            <label for="age">Age</label>
+                        </div>
+                        <input type="text" id="age" class="register-input" name="age" />
+                        <!-- <input type="date" name="begin" 
+                        placeholder="dd-mm-yyyy" value=""
+                        min="1997-01-01" max="2030-12-31"> -->
+                    </div>
+                    <div class="register-wrapper" id="register-wrapper-gender">
+                        <div class="register-label">
+                            <label for="gender">Gender</label>
+                        </div>
+                        <select class="form-control" id="gender" name="gender" required>
+                            <option value="" selected disabled hidden></option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="register-wrapper">
+                    <div class="register-label">
+                        <label for="password">Password</label>
+                    </div>
+
+                    <input type="password" id="register-password" class="register-input" name="password" pattern=".{8,}" required />
+                    <small class="password-error">Password must be at least 8 characters long.</small>
+                </div>
+                <div class="error-message2"></div>
+                <button class="register-btn">Create Account</button>
+                <div class="signedup">Already have an account? <span id="signin-link" class="link">Sign In</span></div>
+            </form>
+        </div>
+    </div>
+<!-- successfully registered page -->
+<div class="success-container" style="display: none;">
+    <div class="success-content">
+      <h3 class="success-title">Successful Registration!</h3>
+      <p class="success-message">Congratulations, your registration was successful.</p>
+      <button class="sign-in-button">Go to Sign In</button>
+    </div>
+  </div>
+      
+    <!-- sign in -->
+        <div class="signin">
+            <label for="username">Email or Username:</label>
+            <input type="text" class="signin-input" id="email-username" class="category-input" name="username" /><br>
+            <label for="password">Password:</label>
+            <input type="password" class="signin-input" id="signin-password" class="category-input"
+                name="password" /><br>
+                <div class="error-message"></div>
+            <button class="signin-btn">SIGN IN <img src="./frontend/assets/arrow-right.svg" alt="" class="src"></button>
+            <div class="not-signedup">Don't have an account? <span id="signup-link" class="link">Sign Up!</span></div>
+        </div>
+
+
+    <div class="content-wrapper">
+
+        <!-- mid section -->
+        <div class="mid-section">
+            <!-- top panel -->
+            <div class="top-panel">
+                <div class="new-post-notif-wrapper">
+                    <div class="new-post-popup link">
+                        new post
+                    </div>
+                </div>
+                <div class="top-panel-nav">
+
+                    <div class="filter-categories">
+                        <select name="categories" id="categories">
+                            <option value="all">All posts</option>
+                            <option value="CyberSecurity">CyberSecurity</option>
+                            <option value="Games">Game nights</option>
+                            <option value="Freetime">Freetime</option>
+                            <option value="Events">Events</option>
+                            <option value="Random">Random</option>
+                        </select>
+                    </div>
+                    <button type="button" class="new-post-btn">
+                        <img src="./frontend/assets/pluscircle.svg">
+                    </button>
+                </div>
+            </div>
+            
+            <!-- main page -->
+            <div class="posts-container">
+                <div class="new-post-notif-wrapper">
+                    <div class="new-post-popup link">
+                        new posts
+                    </div>
+                </div>
+            </div>
+            <!-- create post -->
+            <div class="create-post-container">
+                <div class="back">
+
+                    <img src="./frontend/assets/back-arrow.svg">
+                </div>
+                <div class="create-title">
+                    <input id="create-post-title" type="text" placeholder="Title..." />
+                </div>
+                <textarea id="create-post-body" placeholder="Start typing..." name="body" rows="4" cols="50"></textarea>
+                <select name="categories" id="create-post-categories">
+                    <option value="CyberSecurity">CyberSecurity</option>
+                    <option value="Games">Game nights</option>
+                    <option value="Freetime">Freetime activities</option>
+                    <option value="Events">Events</option>
+                    <option value="Random">Random</option>
+                </select>
+                <button class="create-post-btn">
+                    <h4>Create Post</h4>
+                </button>
+            </div>
+            
             <!-- post page -->
+
+            <div class="post-container">
+                <div class="back" id="back-btn">
+
+                    <img src="./frontend/assets/back-arrow.svg">
+                </div>
+                <div class="post-wrapper">
+                    <div class="space-between">
+                        <div class="title" id="title">This is a title</div>
+                        <div class="category">CyberSecurity</div>
+                    </div>
+                    <div class="author" id="author-post">
+                        <div class="left">
+                            <img src="./frontend/assets/profile7.svg" alt="profile-pic">
+                            <div class="post-username" id="username">test</div>
+                            <div class="date" id="date">22 May 2023</div>
+                        </div>
+                        <!-- <div class="category">JavaScript</div> -->
+                    </div>
+                    <div class="full-content">
+                        Nulla aenean id tortor massa ante. Arcu massa felis, nibh nunc
+                        fames vel nunc. Nulla aenean id tortor massa ante. Arcu massa
+                        felis, nibh nunc fames vel nunc.
+                    </div>
+                    <div class="comments-wrapper">
+                        <div class="likes-dislikes-wrapper">
+                            <div class="likes-wrapper">
+                                <img src="./frontend/assets/like3.svg" alt="" class="src" id="like-btn">
+                                <div class="likes" id="post-likes"></div>
+                            </div>
+                            <div class="likes-wrapper">
+                                <img src="./frontend/assets/dislike4.svg" alt="" class="src" id="dislike-btn">
+                                <div class="dislike" id="post-dislikes"></div>
+                            </div>
+                        </div>
+                        <div class="comments">
+                            <img src="./frontend/assets/comment.svg" alt="">
+                            <div class="comment" id="post-comments"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- comments -->
+                <div class="send-comment">
+                    <input type="text" id="comment-input" placeholder="Write comment" />
+                    <button class="send-comment-btn">
+                        <img src="./frontend/assets/send.svg" />
+                    </button>
+                </div>
+                <div class="comments-container"></div>
+            </div>
+            <!-- chat -->
+            <div class="chat-wrapper">
+                <div class="chat-username-wrapper">
+                    <div class="chat-user">
+                        <img src="./frontend/assets/profile7.svg" />
+                        <div class="chat-user-username"></div>
+                        <span id="typing-indicator" style="display: none;">
+                            <span id="typing-text" ></span>
+                            <span id="typing-dots"></span>
+                        </span>
+                    </div>
+                    <div class="close-chat link">X</div>
+                </div>
+                <div class="chat"></div>
+                <div class="send-wrapper">
+                    <input type="text" id="chat-input" placeholder="Start typing...">
+                    <button id="send-btn">
+                        <img src="./frontend/assets/send.svg">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--  right panel -->
+        <div class="right-panel">
+            <div class="users">
+                <p class="online-list">Online</p>
+                <div class="online-users"></div>
+                <p class="online-list" id="offline-list">Offline</p>
+                <div class="offline-users"></div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./frontend/index.js"></script>
+    <script src="./frontend/chat.js"></script>
+</body>
+
+</html>
+
 
             <div class="post-container">
                 <div class="back" id="back-btn">
